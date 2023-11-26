@@ -1,0 +1,6 @@
+export {Intro} from './Intro'
+export {ChooseParamour} from './ChooseParamour'
+export {MemoryChoice} from './MemoryChoice'
+export {MemoryDetail} from './MemoryDetail'
+export {Artwork} from './Artwork'
+export {FinalGallery} from './FinalGallery'

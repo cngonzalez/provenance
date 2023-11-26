@@ -1,18 +1,21 @@
+import React from 'react'
+import {Intro, ChooseParamour, MemoryChoice, MemoryDetail, Artwork, FinalGallery} from './screens'
+import {useShallow} from 'zustand/react/shallow'
+import {useGameStore} from './store'
+
+const screens = {
+  intro: <Intro />,
+  'choose-paramour': <ChooseParamour />,
+  'memory-choice': <MemoryChoice />,
+  'memory-detail': <MemoryDetail />,
+  artwork: <Artwork />,
+  'final-gallery': <FinalGallery />,
+}
+
 function App() {
-  //lifecycle:
-  //choose paramour
-  //clear page
-  //choose fragment
-  //get longer part of fragment and choices of feeling
-  //get image based on feeling
-  //get next fragment option
+  const screen = useGameStore(useShallow((state) => state.currentScreen))
 
-  return ( 
-
-    <div className="h-screen flex items-center justify-center">
-      <div className="font-serif prose">Components go here!</div>
-    </div>
-  )
+  return <div className="h-screen flex items-center justify-center">{screens[screen]}</div>
 }
 
 export default App
